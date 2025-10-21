@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;  
+  padding-top: 2rem; /* Keep this to offset the fixed header */
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: black;
+  padding: 1rem 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+
+.logo{
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem; 
+  scroll-margin-top: 2rem; /* Ensures anchor links scroll to visible content */
+}
+
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #b74b4b;
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #b74b4b;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+#services,
+#skills,
+#education,
+#experience,
+#contact,
+#Projects,
+#certificates {
+    padding-top: 12rem;
+}
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* aligns content to top */
+  gap: 8rem;
+  background-color: black;
+  padding-top: 8rem; /* reduced from default */
+}
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #b74b4b;
+}
+
+.social-icons a:hover{
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #b74b4b;
+    box-shadow: 0  0 25px #b74b4b;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #b74b4b;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #b74b4b;
+    color: black;
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+.typing-text {
+    font-size: 2.4rem;
+    font-weight: 600;
+    min-width: 280px;
+    white-space: nowrap; /* Prevents wrapping */
+}
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Data Analyst";
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Data Analyst";
+    }
+    21%, 40%{
+        content: "Aspiring Data Scientist";
+    }
+    
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+/* Improve readability across all sections */
+section h2 {
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+  color: #b74b4b;
+}
+
+section p,
+section ul li {
+  font-size: 2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+section ul {
+  margin-left: 2rem;
+  padding-left: 1rem;
+}
+
+section ul li {
+  list-style: disc;
+}
+
+/* Add spacing between sections */
+section {
+  margin-bottom: 6rem;
+}  
+/* Bold and prominent section titles */
+section h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #b74b4b;
+  margin-bottom: 2rem;
+}
+
+/* Regular weight for content inside sections */
+section p,
+section ul li {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+section ul li strong,
+section p strong {
+  font-weight: 400;
+  color:#FF4747
+
+
+
+/* or any color from the table above */
+} 
+/* Prevent anchor overlap with fixed header */
+section {
+  scroll-margin-top: 12rem;
+}
+
+/* Project container spacing */
+.project {
+  margin-bottom: 4rem;
+}
+
+/* Project titles */
+.project h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #FF4747;
+  margin-bottom: 1rem;
+}
+
+/* Technologies label inside project description */
+.project p strong {
+  font-weight: 400;
+  color: #FF4747;
+}
+
+/* Bullet points inside project section */
+.project ul li {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  color: white;
+} 
+#skills,
+#education,
+#experience,
+#contact,
+#projects,
+#certificates {
+  padding-top: 0rem; /* or even 4rem if you want it tighter */
+} 
+nav a[href="#skills"]:hover,
+#skills:target ~ header nav a[href="#skills"],
+nav a[href="#experience"]:hover,
+#experience:target ~ header nav a[href="#experience"],
+nav a[href="#projects"]:hover,
+#projects:target ~ header nav a[href="#projects"],
+nav a[href="#education"]:hover,
+#education:target ~ header nav a[href="#education"],
+nav a[href="#certificates"]:hover,
+#certificates:target ~ header nav a[href="#certificates"],
+nav a[href="#contact"]:hover,
+#contact:target ~ header nav a[href="#contact"] {
+  color: #b74b4b;
+  border-bottom: 3px solid #b74b4b;
+} 
+nav a.active {
+  color: #b74b4b;
+  border-bottom: 3px solid #b74b4b;
+} 
+
+.experience-entry {
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.line-one,
+.line-two {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line-one {
+  margin-bottom: 1.2rem; /* increased spacing between line one and line two */
+}
+
+.line-one .role,
+.line-two .company {
+  font-weight: 500;
+  color: #FF4747;
+}
+
+.line-one .date,
+.line-two .location {
+  white-space: nowrap;
+  text-align: right;
+  color: #ccc;
+} 
+.experience-entry {
+  margin-bottom: 4rem;
+}
+
+.company-line {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #FF4747;
+  margin-bottom: 0.5rem;
+}
+
+.company-line .location {
+  float: right;
+  color: #ccc;
+}
+
+.role-date-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.role-date-line .role {
+  flex: 1;
+}
+
+.role-date-line .date {
+  white-space: nowrap;
+  text-align: right;
+  color: #ccc;
+} 
+.experience-entry {
+  margin-bottom: 4rem;
+}
+
+.role-date-row,
+.company-location-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.role-date-row .role,
+.company-location-row .company {
+  font-weight: 600;
+  color: #FF4747;
+}
+
+.role-date-row .date,
+.company-location-row .location {
+  white-space: nowrap;
+  text-align: right;
+  color: #ccc;
+} 
+.experience-entry {
+  margin-bottom: 4rem;
+}
+
+.role-date-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FF4747;
+  margin-bottom: 0.5rem;
+}
+
+.company-line {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.company-line .location {
+  white-space: nowrap;
+  color: #ccc;
+}
+
+.experience-entry ul {
+  padding-left: 2rem;
+}
+
+.experience-entry ul li {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: white;
+} 
+.experience-entry {
+  margin-bottom: 4rem;
+}
+
+.company-role-line,
+.location-date-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.company-role-line .company {
+  font-weight: 600;
+  color: #FF4747;
+}
+
+.company-role-line .role {
+  font-weight: 500;
+  color: white;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.location-date-line .location,
+.location-date-line .date {
+  font-size: 1.8rem;
+  color: #FF4747;
+  white-space: nowrap;
+}
+
+.location-date-line .location {
+  text-align: left;
+}
+
+.location-date-line .date {
+  text-align: right;
+} 
+.project {
+  margin-bottom: 40px; /* Adds space below each project block */
+  padding-bottom: 20px; /* Optional: adds internal spacing */
+  border-bottom: 1px solid #ccc; /* Optional: adds a subtle divider */
+}
